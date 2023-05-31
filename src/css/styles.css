@@ -13,11 +13,11 @@ div, form, input, select, p, a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* min-width: 80%; */
   text-decoration: none;
 }
 a:hover {
   color: #8ebf42;
+  cursor: pointer;
 }
 
 h1 {
@@ -48,7 +48,6 @@ color: #8ebf42;
   color: white;
   text-decoration: none;
 }
-
 
 .main-block {
   display: flex;
@@ -150,3 +149,21 @@ color: #8ebf42;
         max-width: 80%;
       }
 
+
+      .hide {
+        display: none;
+      }
+
+
+
+      @media only screen and (max-width: 600px) {
+
+        .all-resumes-wrapper{
+          flex-direction: column;
+        }
+
+        .resumes-wrapper{
+          padding: 20px;
+          margin: 15px 20px;
+        }
+      }

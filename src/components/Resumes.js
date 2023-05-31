@@ -19,10 +19,8 @@ export default function Resumes() {
       e.preventDefault();
       deleteResume(id) // delete function goes here
        getResumes() // calling the function to get the data
-        .then(res => setResumes(res.data)) // setting state with returned data
-
+        .then(res => setResumes(res.data)) // setting state with 
         nav('/') // navigate back to the main screen
-    
    }
 
 

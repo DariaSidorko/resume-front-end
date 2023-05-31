@@ -1,10 +1,14 @@
 
-//import data from '../data'
+
 import { useState, useEffect } from "react";
 import { getResume, deleteTodo } from "../services/resumes-api";
-import {useParams, useNavigate} from 'react-router-dom'
+import {useParams, useNavigate, Link} from 'react-router-dom';
+import {getResumes, deleteResume} from '../services/resumes-api';
+
 
 export default function Resume() {
+    
+    const show = true
 
   const nav = useNavigate() // setting up our return to main page
   const {id} = useParams() // destructuring the id parameter for use
@@ -13,30 +17,60 @@ export default function Resume() {
     getResume(id) //getting the one ToDo from the api using the id
     .then(res => setResume(res.data))}, [])
 
+
+    const deleteTheResume = (e, id) => {
+        e.preventDefault();
+        deleteResume(id) // delete function goes here
+          nav('/') // navigate back to the main screen
+     }
+
+    //  const addToggle = () => {
+
+    //  }
+
+    //  const createTheSummaty = () => {
+
+    //  }
+
+    const openInNewTab = (url) => {
+        window.open(url, '_blank', 'noreferrer');
+      };
+
   return (
     <div> 
         <div class="resume-header">     
                     <h1 class="name">{ resume.name }</h1>
                     <h3 class="tagline">{ resume.title }</h3>
                     <div class="contact-list">
-                        <p><i class="fa fa-envelope"></i><a href={ resume.email }>{ resume.email }</a></p>
-                        <p class="phone"><i class="fa fa-phone"></i><a href={ resume.phone }>{ resume.phone }</a></p>
-                        <p class="website"><i class="fa fa-globe"></i><a href="http://www.dariasidorko.com/" target="_blank">{ resume.website }</a></p>
-                        <p class="linkedin"><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/dariasidorko" target="_blank">{ resume.linkedIn }</a></p>
-                        <p class="github"><i class="fa fa-github"></i><a href="https://github.com/DariaSidorko" target="_blank">{ resume.gitHub }</a></p>
+                        <p>{ resume.email }</p>
+                        <p class="phone">{ resume.phone }</p>
+                        <p class="website"><i></i><a onClick={() => openInNewTab(resume.website)}>{ resume.website }</a></p>
+                        <p class="linkedin"><i></i><a onClick={() => openInNewTab(resume.linkeIn)}>Linked In</a></p>
+                        <p class="github"><i ></i><a onClick={() => openInNewTab(resume.gitHub)}>GitHub</a></p>
                     </div>
         </div> 
         
+        <Link className='edit-delete-button' to={`/${resume._id}/edit`}> Edit</Link>
+        <Link className="edit-delete-button" onClick={(e) => deleteTheResume(e, resume._id)}>Delete</Link> 
         <div class="main-wrapper"> 
-
-        {/* <section class="section experiences-section">
+         {/* {
+         resume.profileSummary ?
+        <button onClick={addToggle()} className="hide">+ add profile summary</button> :
+        <button onClick={addToggle()} >+ add profile summary</button>
+         
+         }
+        <form onSubmit={createTheSummaty} class="account-details">
+            <div ><label>Name</label>
+            <input type="text" name="name" required/></div>
+            <button type="submit" >Submit</button>
+        </form>
+            <section class="section experiences-section">
                 <h2 class="section-title"><i ></i>Profile Summary</h2>
-              
                     <div class="item">
                         <p>{ resume.profileSummary } </p>  
                     </div>
-            </section> */}
-            
+            </section>
+             */}
             {/* <!--*****  education section  *****--> */}
             {/* <section class="section education-section">
                 <h2 class="section-title"><i ></i>Education</h2>

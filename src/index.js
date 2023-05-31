@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import './css/resumePage.css';
-// import './css/createPage.css';
 import './css/styles.css';
 import App from './App';
-// import 'bootstrap/dist/css/bootstrap.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
