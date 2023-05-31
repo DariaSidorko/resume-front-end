@@ -1,0 +1,152 @@
+
+
+
+
+div, form, input, select, p, a { 
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-width: 80%; */
+  text-decoration: none;
+}
+a:hover {
+  color: #8ebf42;
+}
+
+h1 {
+margin: 0;
+font-weight: 400;
+padding-top: 30px;
+}
+h3 {
+margin: 12px 0;
+color: #8ebf42;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #8ebf42;
+  padding: 15px 20%;
+  font-size: 1.5em;
+  width: 100vw
+}
+
+.nav-link{
+  color: white;
+  padding: 0 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  min-width: 80%;
+  }
+
+  .account-details > div {
+    min-width: 80%;
+  }
+
+  form{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  label {
+    padding: 15px 5px 5px 5px;
+    text-align: right;
+    vertical-align: middle;
+    }
+
+    .lables{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input {
+      width: 400px;
+      padding: 5px ;
+      vertical-align: middle;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 0;
+      margin: 30px auto;
+      border-radius: 5px; 
+      border: none;
+      background: #8ebf42; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+
+      button:hover {
+      background: #82b534;
+      }
+
+      .all-resumes-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .resumes-wrapper{
+        padding: 30px;
+        border: solid 1px #666;
+        border-radius: 8px;
+        margin: 50px 20px;
+      }
+
+      .resumes-header{
+        margin: 12px 0;
+        font-size: 18px;
+        color: #666;
+        font-weight: 300;
+      }
+
+      .edit-delete-button{
+        padding: 4px 0;
+        margin: 7px auto;
+        border-radius: 5px; 
+        border: solid 1px  #8ebf42;
+        background: #eef9dd;
+        font-size: 14px;
+        font-weight: 600;
+        color: #8ebf42;
+        width: 70%;
+      }
+
+      .edit-delete-wrapper{
+        max-width: 30%;
+      }
+
+      .contact-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+      }
+
