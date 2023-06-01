@@ -21,7 +21,9 @@ export default function Resume() {
     const deleteTheResume = (e, id) => {
         e.preventDefault();
         deleteResume(id) // delete function goes here
-          nav('/') // navigate back to the main screen
+        setTimeout(()=>{
+            nav('/') // navigate back to the main screen
+          }, 300)
      }
 
     //  const addToggle = () => {

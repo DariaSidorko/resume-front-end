@@ -2,8 +2,8 @@
 
 // All of our endpoints
 import axios from 'axios'
-const baseURL = 'https://resume-builber-back-end.onrender.com/resume'
-//const baseURL = 'http://localhost:3001/resume';
+//const baseURL = 'https://resume-builber-back-end.onrender.com/resume'
+const baseURL = 'http://localhost:3001/resume';
 
 // Show all
 export const getResumes = () => {

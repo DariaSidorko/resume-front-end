@@ -1,7 +1,6 @@
 
 import {getResumes, deleteResume} from '../services/resumes-api';
 import{useState, useEffect} from 'react';
-//import { useNavigate } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom"
 
 
@@ -14,13 +13,16 @@ export default function Resumes() {
         getResumes() // calling the function to get the data
         .then(res => setResumes(res.data)) // setting state with returned data
     }, [])
-
     const deleteTheResume = (e, id) => {
       e.preventDefault();
       deleteResume(id) // delete function goes here
        getResumes() // calling the function to get the data
-        .then(res => setResumes(res.data)) // setting state with 
+      setTimeout(()=>{
+        getResumes() // calling the function to get the data
+          .then(res => setResumes(res.data));
         nav('/') // navigate back to the main screen
+      }, 300)
+       
    }
 
 

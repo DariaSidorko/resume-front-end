@@ -27,8 +27,10 @@ const editTheResume = e => {
     linkedIn: e.target.linkedIn.value,
     gitHub: e.target.gitHub.value,
   }
-  editResume(id, updatedTodo)
-  nav(`/${id}`)
+  editResume(id, updatedTodo);
+  setTimeout(()=>{
+    nav(`/${id}`) // navigate back to the main screen
+  }, 300)
 }
 
   return (
@@ -40,7 +42,6 @@ const editTheResume = e => {
           <h3>About</h3>
         </div>
         <form onSubmit={editTheResume} class="account-details">
-        {/* <input type='text' name='description' id='dsc'/> */}
           <div><label>Name</label>
             <input type="text" name="name" required defaultValue={resume.name} /></div>
           <div><label>Title</label>
